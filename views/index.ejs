@@ -1,0 +1,88 @@
+<!---- Header Area Start----->
+<%- include('header') %>
+<!---- Header Area ends----->
+<div style="display:none" class="valBmi"><%= result %></div>
+
+
+<div class="container workspace col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">BMI Calculator</h1>
+        <div class="indicator">
+            <div class="indicator__body" style="background: 
+                <% if(result == null || result === ''){%>lightgrey<%} else if (result <= 18.5){%> orange <%} else if (result >18.5 & result <= 25){%>green <%} else if (result > 25 & result <= 30){%>#ffafaf<%} else if(result > 30 & result <= 200){%>red<%}%>
+            ;">
+                
+                <div class="indicator__cover">
+                    <h5><%- status -%><br>BMI = <%= result%></h5>
+                </div>
+            </div>
+        </div>
+        
+        <p class="col-lg-10 fs-4">
+            <% if (result <= 18.5) {%>
+            <h4>Important Tips:</h4>
+            <ul>
+                <li>Your weight is not ideal and it needs immediate attention</li>
+                <li>You need to increase your weight using heavy diet and regular training</li>
+                <li>Get proper diet Plan for a professional nutritionist</li>
+            </ul>
+            <% } else if(result > 18.5 && result <= 25){%>
+            <h4>Important Tips:</h4>
+            <ul>
+                <li>Your weight is normal and you should keep it balanced</li>
+                <li>You need to balance your weight using heavy proper diet and regular training</li>
+                <li>Get proper diet Plan for a professional nutritionist</li>
+            </ul>
+            <% } else if(result > 25 && result <= 30){%>
+            <h4>Important Tips:</h4>
+            <ul>
+                <li>You are overweight and you should maintain your weight</li>
+                <li>You need to balance your weight using light and proper diet and regular training</li>
+                <li>Get proper diet Plan for a professional nutritionist</li>
+            </ul>
+            <% } else if(result > 30){%>
+            <h4>Important Tips:</h4>
+            <ul>
+                <li>You are suffered from Obesity</li>
+                <li>You need immediate doctor's consultation to get you into shape</li>
+                <li>Follow the Doctor and Nutritionist's instructions to get your body into shape.</li>
+                <li>A Happy mind lives in a healthy body.</li>
+            </ul>
+            <% } %>  
+        </p>
+      </div>
+      
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-2 p-md-4 border rounded-3 bg-light" action="/" method="POST" wtx-context="1890D801-33F6-4238-B37A-BAC386A2A555">
+          <div class="form-floating mb-3">
+            <label for="weight">Weight in KG(Kilograms)</label>
+            <div class="input-group">
+                <input type="number" class="form-control" name="weight" placeholder="Ex. 65 KG" title="Enter weight in numbers only">
+                <div class="input-group-append">
+                    <select class="form-control input-group-text" id="basic-addon3" name="unit" id="inputGroupSelect04">
+                        <option selected disabled>Unit</option>
+                        <option value="kg">KG</option>
+                        <option value="lbs">lbs</option>
+                    </select>
+                </div>
+              </div>
+            
+          </div>
+          <div class="form-floating mb-3">
+            <label for="height">Height in CM(Centimeters)</label>
+            <input type="number" class="form-control" name="height" placeholder="Ex. 180CM" title="Enter height in numbers only">
+          </div>
+          <div class="form-floating mb-3">
+            <label for="height">Your Age</label>
+            <input type="number" class="form-control" name="age" placeholder="Ex. 25Yrs" title="Enter the age in numbers only">
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">CHECK BMI</button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!---- footer Area start----->
+<%- include('footer') %>

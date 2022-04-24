@@ -1,0 +1,131 @@
+/*Import Google Font -: Robot Slab*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/*Import FontAwesome Library 5.13.0*/
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+body{
+    background: #e7e7e7 !important;
+    font-family: 'Roboto Slab', serif !important;
+}
+
+header{
+    padding: 2%;
+    text-align: center;
+}
+header img{
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    object-fit: contain;
+    object-position: center;
+    border: 4px solid rgb(255, 188, 154);
+}
+header h1, header h4{
+    margin:3px;
+} 
+header h1{
+    font-size: 26px;
+    text-transform: uppercase;
+}
+header h4{
+    font-size: 17px;
+    color: orangered;
+}
+header ul{
+    list-style: none;
+    padding: 0;
+}
+header ul li{
+    display: inline;
+    text-align: center;
+    font-size: 13px;
+    line-height:13px;
+    margin:0 6px;
+    color:#fff;
+    padding: 2px 8px 4px 8px;
+    border-radius: 30px;
+}
+header ul li:nth-child(n+1){
+    background-color:rgb(41, 109, 245);
+}
+header ul li:nth-child(2n+2){
+    background-color:rgb(255, 135, 75);
+}
+header ul li:nth-child(3n+3){
+    background-color:rgb(69, 198, 144);
+}
+header ul li::before{
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: bold;
+    margin-right: 4px;
+}
+header a.contactMe {
+    display: block;
+    width: 200px;
+    margin: auto;
+    background: #183e8a;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 30px;
+    border-bottom: 5px solid #0a2f7a;
+}
+
+/*Workspace Area style*/
+.workspace{
+    background-color:#fff;
+    padding-top:5%;
+    border-radius: 20px 20px 0 0;
+}
+
+/*--Indicator Meter Style--*/
+.indicator{
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+.indicator__body{
+    width: 100%;
+    height: 0;
+    background-color: lightgrey;
+    padding-bottom:50%;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+    transition: transform 0.7s ease-out;
+}
+.indicator__fill{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    transform-origin: center top;
+    transform: rotate(0.25turn);
+    transition: transform 0.4s ease-out;
+}
+.indicator__cover{
+    width: 75%;
+    height: 150%;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 15%;
+    box-sizing: border-box;
+    
+}
+
